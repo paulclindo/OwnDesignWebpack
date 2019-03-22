@@ -4,7 +4,15 @@ import {firstMessage, delayMessage} from './message';
 import disnovoImg from '../images/logo.png';
 import disnovoVideo from '../videos/lab_background.mp4';
 import data from './teachers.json';
-import renderToDom from './render-to-dom'
+import renderToDom from './render-to-dom';
+import Teachers from './components/teachers';
+
+import React from 'react';
+import { render } from 'react-dom';
+
+
+
+render(<Teachers data={data}/>, document.getElementById('container-react'))
 
 console.log(data)
 data.teachers.forEach( (teacher)=>{
