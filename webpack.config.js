@@ -32,6 +32,25 @@ module.exports = {
           "css-loader",
           'sass-loader'
         ]
+      },
+      {
+        test:/\.(jpg|png|gif|woff|eot|ttf|svg)$/ ,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 1000000,
+          }
+        }
+      },
+      {
+        test:/\.(webm|mp4)$/ ,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 1000000,
+            name: 'videos/[name].[hash].[ext]'
+          }
+        }
       }
     ]
   },
